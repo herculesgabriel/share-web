@@ -1,44 +1,40 @@
+import { useEffect, useState } from 'react';
+import axios from '../../services/messagesAPI';
+
 import './style.css';
 
-const Main = () => (
-  <main className="messages">
-    <section>
-      <article>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque, libero et convallis maximus, sapien lacus dapibus urna, at rutrum diam augue at turpis. Mauris et magna nisl.
-        </p>
-        <strong>MARIA DA SILVA - 09/01/2021</strong>
-      </article>
+const Main = () => {
+  const [messages, setMessages] = useState([]);
 
-      <article>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque, libero et convallis maximus, sapien lacus dapibus urna, at rutrum diam augue at turpis. Mauris et magna nisl.
-        </p>
-        <strong>MARIA DA SILVA - 09/01/2021</strong>
-      </article>
+  useEffect(() => {
+    axios.get('messages')
+      .then(response => setMessages(response.data.message));
+  }, []);
 
-      <article>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque, libero et convallis maximus, sapien lacus dapibus urna, at rutrum diam augue at turpis. Mauris et magna nisl.
-        </p>
-        <strong>MARIA DA SILVA - 09/01/2021</strong>
-      </article>
+  return (
+    <main className="messages">
+      <section>
+        {
+          messages.map(({ message, author, created }) => {
+            const formattedDate = new Date(created).toLocaleString();
 
-      <article>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis scelerisque, libero et convallis maximus, sapien lacus dapibus urna, at rutrum diam augue at turpis. Mauris et magna nisl.
-        </p>
-        <strong>MARIA DA SILVA - 09/01/2021</strong>
-      </article>
-    </section>
-    <button className="load-messages">
-      Carregar mais mensagens
-    </button>
+            return (
+              <article key={created}>
+                <p>{message}</p>
+                <strong>{author} - {formattedDate}</strong>
+              </article>
+            )
+          })
+        }
+      </section>
 
-    <footer>
-      <p>Created by um monte de gente bla bla bla...</p>
-    </footer>
-  </main>
-);
+      <button className="load-messages">Carregar mais mensagens</button>
+
+      <footer>
+        <p>Created by um monte de gente bla bla bla...</p>
+      </footer>
+    </main>
+  );
+}
 
 export default Main;
