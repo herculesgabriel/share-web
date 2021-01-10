@@ -1,12 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
 
+body {
+  background: linear-gradient(180deg, #0fa36b 0%, #168259 100%) fixed;
+}
+
 .total-messages {
   color: white;
   font-size: 1.2em;
 }
 
-.main {
-  align-items: center;
+.message-list {
+  align-items: stretch;
   color: rgba(138, 138, 138, 1);
   display: flex;
   flex-direction: column;
@@ -15,10 +19,11 @@
   justify-content: space-between;
   margin: 0 auto;
   max-height: 80vh;
+  width: 80vw;
   max-width: 1000px;
 }
 
-.main strong {
+.message-list strong {
   color: black;
   display: block;
   margin-top: 10px;
@@ -37,13 +42,21 @@
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 15px 0;
   padding: 20px 20px;
+
+  width: 100%;
 }
 
 .messages article p {
   margin: 0;
 }
 
-.load-messages {
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.load-messages-button,
+.create-message-button {
   background-color: white;
   border: none;
   border-radius: 5px;
@@ -54,37 +67,47 @@
   padding: 10px;
 }
 
-footer {
+.create-message-button a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.message-list-footer {
   bottom: 0;
   left: 0;
   position: fixed;
   right: 0;
 }
 
-footer p {
+.message-list-footer p {
   color: white;
   font-family: "Ropa Sans", sans-serif;
   font-size: 1.4em;
 }
 
 @media (max-height: 900px) {
-  footer {
+  .message-list-footer {
     position: relative;
   }
 }
 
 @media (max-width: 500px) {
-  footer {
+  .message-list-footer {
     position: relative;
   }
 }
 
-@media (max-width: 1100px) {
-  .messages article {
-    margin: 15px 20px;
+@media (max-width: 600px) {
+  .buttons {
+    flex-direction: column;
+    padding: 25px;
   }
 
-  footer p {
+  .load-messages-button {
+    margin-bottom: 10px;
+  }
+
+  .message-list-footer p {
     font-size: 1.1em;
   }
 }

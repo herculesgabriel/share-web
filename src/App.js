@@ -1,5 +1,5 @@
-import Home from './pages/Home';
+import Routes from './Routes';
 
-const App = () => <Home />
+const App = () => <Routes />;
 
 export default App;
