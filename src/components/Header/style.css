@@ -22,3 +22,15 @@
 button.current-page {
   background-color: #e3f1ec;
 }
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 15px;
+    flex-direction: column;
+  }
+
+  .menu button {
+    margin-top: 10px;
+    height: 50px;
+  }
+}
