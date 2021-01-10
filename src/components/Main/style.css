@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
 
+.total-messages {
+  color: white;
+  font-size: 1.2em;
+}
+
 .messages {
   align-items: center;
   color: rgba(138, 138, 138, 1);
