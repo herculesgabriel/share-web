@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import shareLogo from '../../assets/images/share.svg';
 import './style.css';
 
@@ -7,15 +9,15 @@ const Header = () => (
       <img className="logo" src={shareLogo} alt="share logo" />
 
       <div className="menu">
-        <a href="/">
-          <button className="current-page">Aleatório</button>
-        </a>
-        <a href="/recent">
-          <button>Recentes</button>
-        </a>
-        <a href="/about">
+        <Link to="/">
+          <button className="current-page">Recentes</button>
+        </Link>
+        <Link to="/random">
+          <button>Aleatório</button>
+        </Link>
+        <Link to="/about">
           <button>Sobre</button>
-        </a>
+        </Link>
       </div>
     </nav>
   </header>
