@@ -33,7 +33,7 @@ const MessagesList = () => {
               return (
                 <article key={_id}>
                   <p>{message}</p>
-                  <strong>{author} - {formattedDate}</strong>
+                  <strong>{author || "Anônimo"} - {formattedDate}</strong>
                 </article>
               )
             })
