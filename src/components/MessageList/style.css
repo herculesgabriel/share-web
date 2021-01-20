@@ -4,6 +4,12 @@ body {
   background: linear-gradient(180deg, #0fa36b 0%, #168259 100%) fixed;
 }
 
+.loading {
+  color: white;
+  font-size: 24px;
+  margin-top: 30px;
+}
+
 .total-messages {
   color: white;
   font-size: 1.2em;

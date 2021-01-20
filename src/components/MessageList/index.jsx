@@ -21,9 +21,9 @@ const MessagesList = () => {
     if (readMessages + 3 >= messages.length) window.location.reload();
     setReadMessages(readMessages + 3)
   };
-
+  if ( messages.length === 0 ) return <p className="loading">carregando mensagens...</p>
   return (
-    <>
+    <p>
       <main className="message-list">
         <section className="messages">
           {
@@ -49,7 +49,7 @@ const MessagesList = () => {
       <footer className="message-list-footer">
         <p>Já recebemos um total de {totalMessagesOnServer} mensagens | Created by Dan & Hercules</p>
       </footer>
-    </>
+    </p>
   );
 }
 
