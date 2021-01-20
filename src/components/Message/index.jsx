@@ -14,10 +14,8 @@ const Message = () => {
   const handleCreateMessage = () => {
     const messageData = { message, author };
 
-    axios.post('message/add', messageData)
+    axios.post('messages', messageData)
       .then(({ data }) => {
-        console.log(data.message);
-
         alert('Criado com sucesso!');
         navigate.push('/');
       })
