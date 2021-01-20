@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.logo {
+  font-size: 58px;
+  font-weight: 200;
+  font-family: 'Lobster', cursive;
+  color: #16855B;
+}
 
 .navbar {
   align-items: center;

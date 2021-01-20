@@ -18,15 +18,14 @@ const MessagesList = () => {
       });
   }, []);
 
-  const loadMoreMessages = () => setReadMessages(readMessages + 3);
+  const loadMoreMessages = () => {
+    if (readMessages + 3 >= messages.length) window.location.reload();
+    setReadMessages(readMessages + 3)
+  };
 
   return (
     <>
       <main className="message-list">
-        <p className="total-messages">
-          Total de mensagens: {totalMessagesOnServer}
-        </p>
-
         <section className="messages">
           {
             messages.slice(readMessages).map(({ _id, message, author, createdAt }) => {
@@ -41,22 +40,15 @@ const MessagesList = () => {
             })
           }
         </section>
-
         <div className="buttons">
           <button className="load-messages-button" onClick={loadMoreMessages}>
-            Carregar mais mensagens
-          </button>
-
-          <button className="create-message-button">
-            <Link to="/create-message">
-              Compartilhar uma mensagem
-            </Link>
+            Mostrar mais mensagens
           </button>
         </div>
       </main>
 
       <footer className="message-list-footer">
-        <p>Created by um monte de gente bla bla bla...</p>
+        <p>Já recebemos um total de {totalMessagesOnServer} mensagens | Created by Dan & Hercules</p>
       </footer>
     </>
   );

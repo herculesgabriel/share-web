@@ -29,6 +29,9 @@ dd {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
 /* Set core body defaults */
 body {
   min-height: 100vh;

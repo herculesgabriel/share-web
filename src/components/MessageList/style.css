@@ -17,16 +17,18 @@ body {
   font-family: "Ropa Sans", sans-serif;
   font-size: 1.3em;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 20px auto;
   max-height: 80vh;
   width: 80vw;
   max-width: 1000px;
 }
 
 .message-list strong {
-  color: black;
+  color: rgb(34, 34, 34);
   display: block;
-  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 200px;
+  margin-top: 0px;
 }
 
 .messages {

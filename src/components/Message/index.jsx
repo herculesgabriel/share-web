@@ -64,7 +64,7 @@ const Message = () => {
       </main>
 
       <footer className="create-message-footer">
-        <p>Created by um monte de gente bla bla bla...</p>
+        <p>Created by Dan & Hercules</p>
       </footer>
     </div>
   );
